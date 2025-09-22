@@ -64,6 +64,8 @@ def analyze(requirements_file):
     if ADVANCED_MODE:
         analyzer = DependencyAnalyzer()
         result = analyzer.analyze(requirements_file)
+        # Asegurar que el resultado tenga la clave file_analyzed
+        result['file_analyzed'] = requirements_file
     else:
         # Modo básico mejorado
         result = {
